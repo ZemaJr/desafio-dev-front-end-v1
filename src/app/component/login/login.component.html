@@ -63,14 +63,16 @@
         <a routerLink="/home"> <strong>Login</strong> efetuado com sucesso! </a>
       </p>
     </mat-error>
-    <p id="alerta">⛔ <strong>Token</strong> inválido!</p>
+    <mat-error *ngIf="token !== 'QpwL5tke4Pnpja7X4'">
+      <p id="alerta">⛔ <strong>Token</strong> inválido!</p>
+    </mat-error>
   </div>
 
   <div class="tooltip">
     Ajuda?
     <span class="tooltiptext">
       <strong>Usuário:</strong> eve.holt@reqres.in<br /><strong>Senha:</strong>
-      cityslicka
+      qualquer valor não vazio.
     </span>
   </div>
 </form>

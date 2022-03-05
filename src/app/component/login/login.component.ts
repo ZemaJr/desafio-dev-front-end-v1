@@ -19,6 +19,7 @@ export class LoginComponent implements OnInit {
   ngOnInit(): void { }
 
   enviar() {
+    this.token = undefined;
     this.loginService.setLogin(this.emailFormControl.value, this.passwordFormControl.value);
     this.loginService.fetchLogin().subscribe((respostaLogin) => 
     this.token = respostaLogin.token);
