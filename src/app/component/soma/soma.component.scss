@@ -1,0 +1,158 @@
+/* =======================
+RAIZ 
+======================= */
+
+* {
+  position: relative;
+  display: flex;
+}
+
+/* ======================= 
+CONTAINER 
+======================= */
+
+.container {
+  display: block;
+  width: auto;
+  margin: auto 10px;
+  height: auto;
+}
+
+/* ======================= 
+TEMA 
+======================= */
+
+.tema {
+  display: flex;
+  margin: auto 10px;
+  align-items: center;
+}
+
+.mudaTema {
+  color: rgba(102, 88, 228, 0.986);
+  font-weight: bold;
+  border: 1px solid rgba(102, 88, 228, 0.986);
+}
+
+.example-h2 {
+  color: rgba(102, 88, 228, 0.986);;
+}
+
+.mudaTemaTitulo {
+  color: rgb(250, 152, 4);
+}
+
+mat-slide-toggle {
+  margin: 10px;
+  color: rgb(250, 152, 4);
+  border: 1px solid rgb(250, 152, 4);
+  border-radius: 10px;
+  padding: 8px;
+}
+
+.example-section {
+  margin: 0px;
+  display: flex;
+  align-content: center;
+  align-items: center;
+  height: 60px;
+}
+
+.example-margin {
+  margin: 10px;
+}
+
+/* ======================= 
+ENTRADA 
+======================= */
+
+.entrada {
+  width: auto;
+  min-width: 600px;
+}
+
+.example-full-width, #entradaNro1, #entradaNro2 {
+  width: 100%;
+  font-style: italic;
+  padding: 10px;
+  display: grid;
+}
+
+#entradaNro1 {
+  border-bottom: 1px solid rgb(250, 152, 4);
+  color: rgb(250, 152, 4);
+}
+
+#entradaNro2 {
+  border-bottom: 1px solid rgba(102, 88, 228, 0.986);
+  color: rgba(102, 88, 228, 0.986);
+}
+
+.mudaTemaEntrada {
+  border-bottom: 1px solid rgb(250, 152, 4);
+  color: rgb(250, 152, 4);
+}
+
+/* ======================= 
+BOTÕES: SOMAR E LIMPAR 
+======================= */
+
+.botoes {
+  min-width: 600px;
+}
+
+button {
+  margin: 10px;
+  font-size: 20px;
+  padding: 10px;
+  color: rgba(102, 88, 228, 0.986);
+  width: 100%;
+  height: auto;
+  position: relative;
+  transform: translate(0%, 0%);
+}
+
+.botoes button {
+  text-decoration: dashed;
+  justify-content: center;
+}
+
+.mudaTemaBotaoSomar {
+  background-color: rgb(250, 152, 4);
+}
+
+.mudaTemaBotaoLimpar {
+  color: rgb(250, 152, 4);
+}
+
+/* ======================= 
+RESULTADO 
+======================= */
+
+.resultado {
+  border-top: 2px solid rgba(102, 88, 228, 0.986);
+  border-bottom: 2px solid rgba(102, 88, 228, 0.986);
+  color: rgba(102, 88, 228, 0.986);
+  border-radius: 10px;
+  padding: 10px;
+  text-align: center;
+  height: 50px;
+  width: 90%;
+  margin: auto;
+  min-width: 600px;
+}
+
+.ResultadoInput {
+  color: rgba(102, 88, 228, 0.986);
+  min-width: 600px;
+}
+
+.mudaTemaResultado {
+  border-top: 2px solid rgb(250, 152, 4);
+  border-bottom: 2px solid rgb(250, 152, 4);
+  color: rgb(250, 152, 4);
+}
+
+.mudaTemaResultadoInput{
+  color: rgb(250, 152, 4);
+}

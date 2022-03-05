@@ -1,0 +1,17 @@
+mat-toolbar {
+  margin-top: 55px;
+  border-bottom: 3px solid blueviolet;
+  border-radius: 20px;
+  justify-content: center;
+}
+
+mat-toolbar, a {
+  background-color: #fa8703;
+  font-size: 20px;
+  color: white;
+}
+
+mat-toolbar a:hover {
+  color: blueviolet;
+  border-bottom: 1px solid blueviolet;
+}

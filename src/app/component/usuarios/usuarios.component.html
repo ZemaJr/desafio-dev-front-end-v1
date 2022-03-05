@@ -1,0 +1,20 @@
+<app-toolbar></app-toolbar>
+<mat-grid-list cols="2" rowHeight="2:1">
+  <ul>
+    <li *ngFor="let usuario of users">
+      <mat-grid-tile>
+        <mat-card class="example-card">
+          <mat-card-title-group>
+            <img mat-card-sm-image [src]="usuario.avatar" alt="Foto do Usuário." />
+            <mat-card-title
+              >{{ usuario.id }} - {{ usuario.first_name }}</mat-card-title
+            >
+            <mat-card-subtitle>{{ usuario.last_name }}</mat-card-subtitle>
+            <mat-card-subtitle>E-mail: {{ usuario.email }}</mat-card-subtitle>
+          </mat-card-title-group>
+          <mat-card-content> 📌 {{ longText }} </mat-card-content>
+        </mat-card>
+      </mat-grid-tile>
+    </li>
+  </ul>
+</mat-grid-list>

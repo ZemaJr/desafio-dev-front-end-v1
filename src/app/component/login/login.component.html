@@ -1,0 +1,82 @@
+<form class="form">
+  <label id="login">Login</label>
+  <mat-form-field class="entrada" appearance="outline">
+    <mat-label>Entre com seu Usuário</mat-label>
+    <input
+      type="email"
+      matInput
+      [formControl]="emailFormControl"
+      placeholder="Ex: usuario@wizsolucoes.com.br"
+    />
+    <mat-error
+      *ngIf="
+        emailFormControl.hasError('email') &&
+        !emailFormControl.hasError('required')
+      "
+    >
+      Por favor, entre com um <strong>E-mail</strong> válido.
+    </mat-error>
+    <mat-error *ngIf="emailFormControl.hasError('required')">
+      🚫 <strong>E-mail</strong> é obrigatório!
+    </mat-error>
+  </mat-form-field>
+
+  <br />
+
+  <mat-form-field class="entrada" appearance="outline">
+    <mat-label>Entre com sua Senha</mat-label>
+    <input
+      matInput
+      [type]="hide ? 'password' : 'text'"
+      [formControl]="passwordFormControl"
+      placeholder="********"
+    />
+    <button
+      mat-icon-button
+      matSuffix
+      (click)="hide = !hide"
+      [attr.aria-label]="'Hide password'"
+      [attr.aria-pressed]="hide"
+    >
+      <mat-icon>{{ hide ? "visibility_off" : "visibility" }}</mat-icon>
+    </button>
+    <mat-error
+      *ngIf="
+        passwordFormControl.hasError('password') &&
+        !passwordFormControl.hasError('required')
+      "
+    >
+      Por favor, entre com uma <strong>Senha</strong> válida.
+    </mat-error>
+    <mat-error *ngIf="emailFormControl.hasError('required')">
+      🚫 <strong>Senha</strong> é obrigatória!
+    </mat-error>
+  </mat-form-field>
+
+  <br />
+
+  <div class="botaoEntrar">
+    <button mat-raised-button color="warn" (click)="enviar()">Entrar</button>
+    <mat-error *ngIf="token == 'QpwL5tke4Pnpja7X4'">
+      <p id="alerta">
+        ✅
+        <a routerLink="/home"> <strong>Login</strong> efetuado com sucesso! </a>
+      </p>
+    </mat-error>
+    <p id="alerta">⛔ <strong>Token</strong> inválido!</p>
+  </div>
+
+  <div class="tooltip">
+    Ajuda?
+    <span class="tooltiptext">
+      <strong>Usuário:</strong> eve.holt@reqres.in<br /><strong>Senha:</strong>
+      cityslicka
+    </span>
+  </div>
+</form>
+
+<!--
+  'eve.holt@reqres.in';
+  'cityslicka';
+  'QpwL5tke4Pnpja7X4'
+-->

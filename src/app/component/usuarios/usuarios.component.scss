@@ -1,0 +1,38 @@
+.example-card {
+  max-width: 80%;
+  background-color: rgb(255, 165, 0);
+  position: relative;
+}
+
+ul {
+  list-style-type: none;
+}
+
+img {
+  border-radius: 50%;
+  box-shadow: 5px 5px 5px 0px #000000, inset 4px 4px 15px 0px #000000,
+    -4px -6px 4px 4px rgba(0, 0, 0, 0);
+}
+
+.example-card:hover {
+  background-color: rgba(102, 88, 228, 0.986);
+  color: rgb(255, 255, 255);
+  -webkit-box-shadow: -10px 0px 13px -7px #000000, 10px 0px 13px -7px #000000,
+    5px 5px 15px 5px rgba(0, 0, 0, 0);
+  box-shadow: -10px 0px 13px -7px #000000, 10px 0px 13px -7px #000000,
+    5px 5px 15px 5px rgba(0, 0, 0, 0);
+}
+
+mat-card-subtitle:hover {
+  font-weight: bold;
+}
+
+mat-card-content {
+  text-align: justify;
+  border-top: 1px solid rgb(255, 255, 255);
+  padding-top: 10px;
+}
+
+mat-grid-tile {
+  background: white;
+}
