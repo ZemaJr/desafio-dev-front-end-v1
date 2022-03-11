@@ -1,3 +1,7 @@
+app-toolbar {
+  width: 100%;
+}
+
 #wizzinho {
   margin: auto;
   display: flex;
@@ -6,19 +10,18 @@
 }
 
 p {
-  margin: 10px 100px;
+  align-content: center;
+  margin: auto 50px;
   padding: 50px;
   text-align: center;
   color: rgb(255, 165, 0);
   border-top: 3px solid blueviolet;
   border-bottom: 3px solid blueviolet;
   border-radius: 20px;
+  min-width: 875px;
+  position: relative;
 }
 
 p:hover{
   background-color: blueviolet;
-}
-
-.example-spacer {
-  flex: 1 1 auto;
 }

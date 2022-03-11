@@ -1,4 +1,8 @@
-<app-toolbar></app-toolbar>
+<!-- <app-toolbar></app-toolbar> -->
+<div class="pagination">
+  <a routerLink="/usuarios" (click)="carregaUsuarios(1)" >1</a>
+  <a routerLink="/usuarios" (click)="carregaUsuarios(2)" >2</a>
+</div>
 <mat-grid-list cols="2" rowHeight="2:1">
   <ul>
     <li *ngFor="let usuario of users">

@@ -12,12 +12,18 @@ export class UsuariosComponent implements OnInit {
   originally bred for hunting.`;
 
   users: any[] | undefined;
+  paginaUm: number = 1;
+  paginaDois: number = 2;
+  paginaAtual: number = 0;
 
   constructor(private userService: UserService) {}
 
-  ngOnInit(): void {
-    this.userService.fetchUsers().subscribe((respostaLogin) => {
+  ngOnInit(): void { this.carregaUsuarios(1); }
+
+  carregaUsuarios(nroDaPagina: number): void {
+    this.userService.fetchUsers(nroDaPagina).subscribe((respostaLogin) => {
       this.users = respostaLogin.data;
     });
   }
+
 }

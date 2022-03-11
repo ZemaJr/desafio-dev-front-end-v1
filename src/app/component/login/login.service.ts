@@ -6,30 +6,37 @@ import { Observable } from 'rxjs';
   providedIn: 'root',
 })
 export class LoginService {
+  
   constructor(private http: HttpClient) {}
 
+  // isLoggedIn: boolean = false;
   url: string = 'https://reqres.in/api/login';
-  email: string = '';
-  senha: string = '';
-
-  fetchLogin(): Observable<any> {
+  
+  fetchLogin(email: string, password: string): Observable<any> {
     this.http
       .post(this.url, {
-        email: this.email,
-        password: this.senha,
+        email: email,
+        password: password,
       })
       .subscribe((respostaLogin) =>
         console.log('respostaLogin', respostaLogin)
       );
 
     return this.http.post(this.url, {
-      email: this.email,
-      password: this.senha,
+      email: email,
+      password: password,
     });
   }
 
-  setLogin(emailFormControl: string, passwordFormControl: string) {
-    this.email = emailFormControl;
-    this.senha = passwordFormControl;
-  }
+  // login(email: string, password: string): Observable<LoginReponse> {
+  //   return this.http.post<LoginReponse>(this.url, {
+  //     email,
+  //     password,
+  //   });
+  // }
+  
 }
+
+// interface LoginReponse {
+//   token: string;
+// }

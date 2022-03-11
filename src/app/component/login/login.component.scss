@@ -32,7 +32,7 @@
   background-color: #fa8703;
 }
 
-.botaoEntrar #alerta, mat-error{
+.botaoEntrar, .alerta, mat-error{
   text-align: center;
   color: #fa8703;
 }
@@ -46,6 +46,7 @@ mat-label {
   display: block;
   border-bottom: 1px solid #fa8703;
   text-align: center;
+  margin-top: 80px;
 }
 
 .tooltip .tooltiptext {
@@ -63,7 +64,6 @@ mat-label {
   margin: 0% 6%;
   opacity: 0;
   transition: opacity 1s;
-  
 }
 
 .tooltip:hover .tooltiptext {
@@ -71,5 +71,12 @@ mat-label {
   opacity: 0.7;
 }
 
+.alerta {
+  visibility: hidden;
+}
+
+.alertaVisivel {
+  visibility: visible;
+}
 
 

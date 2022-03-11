@@ -11,11 +11,16 @@ RAIZ
 CONTAINER 
 ======================= */
 
+app-toolbar {
+  width: 100%;
+}
+
 .container {
   display: block;
   width: auto;
   margin: auto 10px;
   height: auto;
+  min-width: 875px;
 }
 
 /* ======================= 
@@ -99,6 +104,7 @@ BOTÕES: SOMAR E LIMPAR
 
 .botoes {
   min-width: 600px;
+  top: -30px;
 }
 
 button {

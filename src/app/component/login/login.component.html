@@ -56,15 +56,18 @@
   <br />
 
   <div class="botaoEntrar">
-    <button mat-raised-button color="warn" (click)="enviar()">Entrar</button>
-    <mat-error *ngIf="token == 'QpwL5tke4Pnpja7X4'">
-      <p id="alerta">
-        ✅
-        <a routerLink="/home"> <strong>Login</strong> efetuado com sucesso! </a>
-      </p>
+    <button id="btnEntrar"
+      mat-raised-button
+      color="warn"
+      (click)="enviar()"
+    >
+      {{ statusBotao }}
+    </button>
+    <mat-error *ngIf="statusLogin == 'Logado'">
+      <p classe="alerta">✅ <strong>Login</strong> efetuado com sucesso!</p>
     </mat-error>
-    <mat-error *ngIf="token !== 'QpwL5tke4Pnpja7X4'">
-      <p id="alerta">⛔ <strong>Token</strong> inválido!</p>
+    <mat-error *ngIf="statusLogin == 'Erro'">
+      <p classe="alerta">🚫 <strong>Usuário ou Senha</strong> inválidos!</p>
     </mat-error>
   </div>
 

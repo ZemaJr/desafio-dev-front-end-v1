@@ -36,3 +36,47 @@ mat-card-content {
 mat-grid-tile {
   background: white;
 }
+
+mat-grid-list {
+  min-width: 875px;
+}
+
+.pagination {
+  position: relative;
+  display: inline-flex;
+  background-color: rgb(255, 165, 0);
+  border-radius: 10px;
+  -webkit-box-shadow: -10px 0px 13px -7px #000000, 10px 0px 13px -7px #000000,
+    5px 5px 15px 5px rgba(0, 0, 0, 0);
+  box-shadow: -10px 0px 13px -7px #000000, 10px 0px 13px -7px #000000,
+    5px 5px 15px 5px rgba(0, 0, 0, 0);
+    margin-top: 1%;
+    top: 11px;
+    left: 50%;
+    transform: translate(-50%, 0%);
+}
+
+.pagination a {
+  color: white;
+  float: left;
+  padding: 8px 16px;
+  text-decoration: none;
+  border-radius: 10px;
+}
+
+.pagination a:focus {
+  background-color: orangered;
+  color: white;
+  border-radius: 10px;
+  font-weight: bold;
+}
+
+.pagination a:hover {
+  background-color: rgba(102, 88, 228, 0.986);
+  color: rgb(255, 255, 255);
+  border-radius: 10px;
+  -webkit-box-shadow: -10px 0px 13px -7px #000000, 10px 0px 13px -7px #000000,
+    5px 5px 15px 5px rgba(0, 0, 0, 0);
+  box-shadow: -10px 0px 13px -7px #000000, 10px 0px 13px -7px #000000,
+    5px 5px 15px 5px rgba(0, 0, 0, 0);
+}

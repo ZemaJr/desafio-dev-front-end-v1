@@ -8,11 +8,16 @@ import { Observable } from 'rxjs';
 export class UserService {
   constructor(private http: HttpClient) {}
 
-  fetchUsers(): Observable<any> {
-    /*this.http
-      .get('https://reqres.in/api/users')
-      .subscribe((resposta) => console.log('resposta', resposta));*/
+  urlRaiz: string = 'https://reqres.in/api/users?page=';
+  pagina: number = 1;
+  url: string = '';
 
-    return this.http.get('https://reqres.in/api/users');
+  fetchUsers(nroDaPagina: number): Observable<any> {
+    this.url = this.urlRaiz + nroDaPagina;
+    // this.http
+    //   .get(this.url)
+    //   .subscribe((resposta) => console.log('resposta', resposta));
+    return this.http.get(this.url);
   }
+
 }

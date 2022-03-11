@@ -23,6 +23,8 @@ import { LoginComponent } from './component/login/login.component';
 import { UsuariosComponent } from './component/usuarios/usuarios.component';
 import { SomaComponent } from './component/soma/soma.component';
 import { ToolbarComponent } from './component/toolbar/toolbar.component';
+import { AboutComponent } from './component/about/about.component';
+// import { AuthGuard } from './component/auth-guard.guard';
 
 @NgModule({
   declarations: [
@@ -32,6 +34,7 @@ import { ToolbarComponent } from './component/toolbar/toolbar.component';
     UsuariosComponent,
     SomaComponent,
     ToolbarComponent,
+    AboutComponent,
   ],
   imports: [
     BrowserModule,
@@ -52,7 +55,9 @@ import { ToolbarComponent } from './component/toolbar/toolbar.component';
     MatDialogModule,
     ReactiveFormsModule,
   ],
-  providers: [],
+  providers: [
+    // AuthGuard
+  ],
   bootstrap: [AppComponent],
 })
 export class AppModule {}

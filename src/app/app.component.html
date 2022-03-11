@@ -1,10 +1,11 @@
 <!-- Toolbar -->
 <div class="toolbar" role="banner">
-  <img
-    width="40"
-    alt="Angular Logo"
-    src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR86mS8FMzoSHbbxdlh31JsjcBEZvhwfqXsx5QOMITqc4GHQP6N6v3nVcvMqfbI5115FZg&usqp=CAU"
-  />
+  <a routerLink='/home'>
+    <img
+      alt="Wiz Logo"
+      src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR86mS8FMzoSHbbxdlh31JsjcBEZvhwfqXsx5QOMITqc4GHQP6N6v3nVcvMqfbI5115FZg&usqp=CAU"
+    />
+  </a>
   <span>Bem vindo, <strong>Wizzer!</strong></span>
   <div class="spacer"></div>
   <a
@@ -50,6 +51,9 @@
     </svg>
   </a>
 </div>
+<mat-error class="menuBar" *ngIf="menuBar == true">
+  <app-toolbar></app-toolbar>
+</mat-error>
 
 <!--
 <div class="menu">

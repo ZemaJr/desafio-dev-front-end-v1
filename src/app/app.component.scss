@@ -25,11 +25,11 @@
   background-color: #fa8703;
   color: white;
   font-weight: 600;
-  min-width: 600px;
+  min-width: 875px;
 }
 
 .toolbar img {
-  margin: 0 16px;
+  margin: 20px 16px;
   border-radius: 50%;
   height: 3.5rem;
   width: auto;
@@ -70,4 +70,8 @@
   -webkit-transition: all 0.5s ease-in;
   -o-transition: all 0.5s ease-in;
   transition: all 0.5s ease-in;
+}
+
+.menuBar {
+  top: -100px;
 }
