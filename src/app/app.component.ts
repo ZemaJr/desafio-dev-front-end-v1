@@ -15,6 +15,7 @@ export class AppComponent implements OnInit {
   menuBar: boolean = false;
 
   ngOnInit(): void {
+    this.menuBar = false;
     if (this.getStatusLogin() != 'Logado') {
       this.router.navigate(['/login']);
     }

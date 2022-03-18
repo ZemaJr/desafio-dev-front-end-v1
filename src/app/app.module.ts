@@ -3,6 +3,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { BrowserModule } from '@angular/platform-browser';
 import { HttpClientModule } from '@angular/common/http';
+import { RecaptchaModule } from 'ng-recaptcha';
 
 import { MatInputModule } from '@angular/material/input';
 import { MatFormFieldModule } from '@angular/material/form-field';
@@ -23,7 +24,6 @@ import { LoginComponent } from './component/login/login.component';
 import { UsuariosComponent } from './component/usuarios/usuarios.component';
 import { SomaComponent } from './component/soma/soma.component';
 import { ToolbarComponent } from './component/toolbar/toolbar.component';
-import { AboutComponent } from './component/about/about.component';
 // import { AuthGuard } from './component/auth-guard.guard';
 
 @NgModule({
@@ -34,7 +34,6 @@ import { AboutComponent } from './component/about/about.component';
     UsuariosComponent,
     SomaComponent,
     ToolbarComponent,
-    AboutComponent,
   ],
   imports: [
     BrowserModule,
@@ -54,6 +53,7 @@ import { AboutComponent } from './component/about/about.component';
     MatMenuModule,
     MatDialogModule,
     ReactiveFormsModule,
+    RecaptchaModule,
   ],
   providers: [
     // AuthGuard

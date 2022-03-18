@@ -13,19 +13,21 @@ export class LoginService {
   url: string = 'https://reqres.in/api/login';
   
   fetchLogin(email: string, password: string): Observable<any> {
-    this.http
-      .post(this.url, {
-        email: email,
-        password: password,
-      })
-      .subscribe((respostaLogin) =>
-        console.log('respostaLogin', respostaLogin)
-      );
+
+    // this.http
+    //   .post(this.url, {
+    //     email: email,
+    //     password: password,
+    //   })
+    //   .subscribe((respostaLogin) =>
+    //     console.log('respostaLogin', respostaLogin)
+    //   );
 
     return this.http.post(this.url, {
       email: email,
       password: password,
     });
+    
   }
 
   // login(email: string, password: string): Observable<LoginReponse> {

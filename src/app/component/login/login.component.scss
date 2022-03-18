@@ -5,6 +5,8 @@
   font-weight: bolder;
   text-align: center;
   padding-bottom: 20px;
+  border-radius: 10px;
+  border-top: 2px solid #fa8703;
 }
 
 
@@ -17,6 +19,27 @@
   padding: 50px;
   border-radius: 20px;
   box-shadow: 50px 50px 50px 10px rgba(0, 0, 0, 0.2), 0 10px 50px 0 rgba(0, 0, 0, 0.19);
+}
+
+.recaptcha {
+  position: relative;
+  margin: auto;
+  width: 90%;
+  height: 85px;
+  padding: 10px;
+}
+
+.recaptcha re-captcha {
+  border-top: 2px solid #fa8703;
+  border-bottom: 2px solid #fa8703;
+  border-radius: 10px;
+  position: absolute;
+  left: 50%;
+  transform: translate(-50%, 0);
+  top: -10px;
+  margin-top: 10px;
+  padding: 3px;
+  display: grid;
 }
 
 .entrada {
@@ -44,9 +67,10 @@ mat-label {
 .tooltip {
   position: relative;
   display: block;
-  border-bottom: 1px solid #fa8703;
+  border-bottom: 2px solid #fa8703;
   text-align: center;
   margin-top: 80px;
+  border-radius: 10px;
 }
 
 .tooltip .tooltiptext {

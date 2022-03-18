@@ -83,19 +83,14 @@ ENTRADA
   display: grid;
 }
 
-#entradaNro1 {
+.entradaNro {
   border-bottom: 1px solid rgb(250, 152, 4);
   color: rgb(250, 152, 4);
 }
 
-#entradaNro2 {
+.mudaTemaEntradaNro {
   border-bottom: 1px solid rgba(102, 88, 228, 0.986);
   color: rgba(102, 88, 228, 0.986);
-}
-
-.mudaTemaEntrada {
-  border-bottom: 1px solid rgb(250, 152, 4);
-  color: rgb(250, 152, 4);
 }
 
 /* ======================= 

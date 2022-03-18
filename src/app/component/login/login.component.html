@@ -52,9 +52,12 @@
       🚫 <strong>Senha</strong> é obrigatória!
     </mat-error>
   </mat-form-field>
-
-  <br />
-
+  
+  <div class="recaptcha">
+    <re-captcha (resolved)="resolved($event)" [siteKey]="siteKey">
+    </re-captcha>
+  </div>
+   
   <div class="botaoEntrar">
     <button id="btnEntrar"
       mat-raised-button
@@ -63,6 +66,10 @@
     >
       {{ statusBotao }}
     </button>
+
+    <mat-error *ngIf="captcha == ''">
+      <p classe="alerta">🚫 <strong>reCaptcha</strong> é obrigatório!</p>
+    </mat-error>
     <mat-error *ngIf="statusLogin == 'Logado'">
       <p classe="alerta">✅ <strong>Login</strong> efetuado com sucesso!</p>
     </mat-error>

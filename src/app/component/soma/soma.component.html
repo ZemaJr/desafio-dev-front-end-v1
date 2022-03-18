@@ -19,21 +19,19 @@
   <div class="entrada">
     <mat-form-field class="example-full-width" appearance="outline">
       <mat-label>Primeiro Número</mat-label>
-      <input
-        id="entradaNro1"
-        matInput
+      <input [class.mudaTemaEntradaNro]="ligado == 'Escuro'"
+        classe="entradaNro"
+        matInput 
         [(ngModel)]="nro1"
         type="number"
         placeholder="Exemplo: 999."
       />
     </mat-form-field>
 
-    <!--[class.mudaTemaEntrada]="ligado == 'Claro'"-->
-
     <mat-form-field class="example-full-width" appearance="outline">
       <mat-label>Segundo Número</mat-label>
-      <input
-        id="entradaNro2"
+      <input [class.mudaTemaEntradaNro]="ligado == 'Escuro'"
+      classe="entradaNro"
         matInput
         [(ngModel)]="nro2"
         type="number"

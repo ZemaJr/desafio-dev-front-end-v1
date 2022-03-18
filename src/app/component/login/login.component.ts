@@ -11,32 +11,43 @@ import { AppComponent } from './../../app.component';
   styleUrls: ['./login.component.scss'],
 })
 export class LoginComponent implements OnInit {
-  emailFormControl = new FormControl('', [
-    Validators.required,
-    Validators.email,
-  ]);
+
+  siteKey: string = "6LfWp9AeAAAAAEEmzdE7HE6UNYnPqq11ApIHh99c";
+  captcha: string | undefined = undefined;
+  emailFormControl = new FormControl('', [Validators.required, Validators.email]);
   passwordFormControl = new FormControl('', [Validators.required]);
   hide = true;
-  token: string | undefined = undefined;
+  // token: string | undefined = undefined;
   statusLogin: string = '';
   statusBotao: string = 'Entrar';
-  // loginButtonMessage: string = 'Entrar';
-  // loginErrorMessage: string = '';
 
   constructor(
     private loginService: LoginService,
     private router: Router,
     private appComponent: AppComponent
-  ) {}
+  ) { 
+    this.captcha = undefined;
+  }
 
-  ngOnInit(): void {}
+  ngOnInit(): void { }
+
+  resolved(captchaResponse: string) {
+    this.captcha = captchaResponse;
+  }
 
   enviar(): void {
 
-    this.statusBotao = 'Processando...';
-    this.token = undefined;
+    if (this.captcha == undefined || this.captcha == '') {
+    
+      this.captcha = '';
+    
+    } else {
 
-    this.loginService
+      this.statusLogin = '';
+      this.statusBotao = 'Conectando...';
+      // this.token = undefined;
+
+      this.loginService
       .fetchLogin(this.emailFormControl.value, this.passwordFormControl.value)
       .subscribe({
       next: (respostaLogin) => {
@@ -51,24 +62,14 @@ export class LoginComponent implements OnInit {
         this.statusBotao = 'Entrar';
         this.router.navigate(['/login']);
       }
-    });
+      });
 
-    // this.loginButtonMessage = 'Entrando...';
-    // this.loginService
-    // .login(this.emailFormControl.value.email, this.passwordFormControl.value.password)
-    // .subscribe({
-    //   next: (val) => {
-    //     console.log('val', val);
-    //     // this.loginService.isLoggedIn = true;
-    //     this.router.navigate(['/home']);
-    //   },
-    //   error: (err) => {
-    //     this.loginErrorMessage = 'Usuário ou Senha inválidos';
-    //     this.loginButtonMessage = 'Entrar';
-    //     this.router.navigate(['/login']);
-    //   }
-    // });
+    }
+    
+  }
 
+  autenticado(): string {
+    return this.statusLogin;
   }
   
 }

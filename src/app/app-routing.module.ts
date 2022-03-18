@@ -19,7 +19,7 @@ const routes: Routes = [
   { path: 'usuarios', component: UsuariosComponent },
   // {path: 'home', component: HomeComponent, canActivate: [AuthGuard]},
   // {path: 'soma', component: SomaComponent, canActivate: [AuthGuard]},
-  // {path: 'usuarios', component: UsuariosComponent, canActivate: [AuthGuard]}
+  // {path: 'usuarios', component: UsuariosComponent, canActivate: [AuthGuard]},
 ];
 
 @NgModule({
