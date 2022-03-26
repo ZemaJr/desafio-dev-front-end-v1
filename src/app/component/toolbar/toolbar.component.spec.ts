@@ -1,6 +1,9 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { ToolbarComponent } from './toolbar.component';
+import { AppComponent } from 'src/app/app.component';
+import { RouterTestingModule } from '@angular/router/testing';
+import { MatToolbarModule } from '@angular/material/toolbar';
 
 describe('ToolbarComponent', () => {
   let component: ToolbarComponent;
@@ -8,9 +11,10 @@ describe('ToolbarComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ ToolbarComponent ]
-    })
-    .compileComponents();
+      imports: [ RouterTestingModule, MatToolbarModule ],
+      providers: [AppComponent],
+      declarations: [ToolbarComponent],
+    }).compileComponents();
   });
 
   beforeEach(() => {

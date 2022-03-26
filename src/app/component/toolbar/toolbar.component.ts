@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 
 import { AppComponent } from 'src/app/app.component';
-import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-toolbar',
@@ -10,7 +9,7 @@ import { Router } from '@angular/router';
 })
 export class ToolbarComponent implements OnInit {
 
-  constructor(public appComponent: AppComponent, private router: Router) { }
+  constructor(private appComponent: AppComponent) { }
   
   ngOnInit(): void { }
   

@@ -8,8 +8,7 @@ import { Router } from '@angular/router';
   styleUrls: ['./app.component.scss'],
 })
 export class AppComponent implements OnInit {
-
-  constructor(private router: Router) { }
+  constructor(private router: Router) {}
 
   title = 'desafio-dev-front-end-zema';
   menuBar: boolean = false;
@@ -37,5 +36,4 @@ export class AppComponent implements OnInit {
     }
     return this.menuBar;
   }
-
 }

@@ -52,19 +52,20 @@
       🚫 <strong>Senha</strong> é obrigatória!
     </mat-error>
   </mat-form-field>
-  
+
   <div class="recaptcha">
-    <re-captcha (resolved)="resolved($event)" [siteKey]="siteKey">
-    </re-captcha>
+    <re-captcha (resolved)="resolved($event)" [siteKey]="siteKey"> </re-captcha>
   </div>
-   
+
   <div class="botaoEntrar">
-    <button id="btnEntrar"
+    <button
+      id="btnEntrar"
+      disabled="{{ statusBotao }}"
       mat-raised-button
       color="warn"
       (click)="enviar()"
     >
-      {{ statusBotao }}
+      {{ textoBotao }}
     </button>
 
     <mat-error *ngIf="captcha == ''">
@@ -86,9 +87,3 @@
     </span>
   </div>
 </form>
-
-<!--
-  'eve.holt@reqres.in';
-  'cityslicka';
-  'QpwL5tke4Pnpja7X4'
--->

@@ -7,13 +7,13 @@ import { Observable } from 'rxjs';
 })
 export class LoginService {
   
-  constructor(private http: HttpClient) {}
+  constructor(private http: HttpClient) { }
 
   // isLoggedIn: boolean = false;
-  url: string = 'https://reqres.in/api/login';
+  // url: string = 'https://reqres.in/api/login';
   
-  fetchLogin(email: string, password: string): Observable<any> {
-
+  login(email: string, password: string): Observable<any> {
+    const url = 'https://reqres.in/api/login';
     // this.http
     //   .post(this.url, {
     //     email: email,
@@ -22,8 +22,7 @@ export class LoginService {
     //   .subscribe((respostaLogin) =>
     //     console.log('respostaLogin', respostaLogin)
     //   );
-
-    return this.http.post(this.url, {
+    return this.http.post(url, {
       email: email,
       password: password,
     });

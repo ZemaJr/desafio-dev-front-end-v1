@@ -9,7 +9,7 @@ import { ThemePalette } from '@angular/material/core';
   export class SomaComponent {
   nro1: number | undefined;
   nro2: number | undefined;
-  resultado: any = 'Resultado:';
+  resultado: string = 'Resultado:';
   color: ThemePalette = 'accent';
   checked = true;
   disabled = false;
@@ -25,8 +25,8 @@ import { ThemePalette } from '@angular/material/core';
       this.resultado = 'Entre com números válidos!';
       return;
     }
-    this.resultado = this.nro1 + this.nro2;
-    this.resultado = 'Resultado: ' + this.resultado;
+    const soma = this.nro1 + this.nro2;
+    this.resultado = 'Resultado: ' + soma;
   }
 
   limpar(): void {

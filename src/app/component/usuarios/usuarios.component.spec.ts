@@ -1,4 +1,6 @@
+import { HttpClient, HttpHandler } from '@angular/common/http';
 import { ComponentFixture, TestBed } from '@angular/core/testing';
+import { MatGridListModule } from '@angular/material/grid-list';
 
 import { UsuariosComponent } from './usuarios.component';
 
@@ -8,9 +10,10 @@ describe('UsuariosComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ UsuariosComponent ]
-    })
-    .compileComponents();
+      providers: [HttpClient, HttpHandler],
+      declarations: [UsuariosComponent],
+      imports: [MatGridListModule],
+    }).compileComponents();
   });
 
   beforeEach(() => {

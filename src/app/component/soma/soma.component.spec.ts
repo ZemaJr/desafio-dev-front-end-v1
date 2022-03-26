@@ -1,27 +1,16 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { FormsModule } from '@angular/forms';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { BrowserModule } from '@angular/platform-browser';
-import { HttpClientModule } from '@angular/common/http';
-import { RecaptchaModule } from 'ng-recaptcha';
-
 import { MatInputModule } from '@angular/material/input';
 import { MatFormFieldModule } from '@angular/material/form-field';
-import { MatIconModule } from '@angular/material/icon';
 import { MatButtonModule } from '@angular/material/button';
 import { MatButtonToggleModule } from '@angular/material/button-toggle';
 import { MatSlideToggleModule } from '@angular/material/slide-toggle';
-import { MatCardModule } from '@angular/material/card';
-import { MatGridListModule } from '@angular/material/grid-list';
-import { MatMenuModule } from '@angular/material/menu';
-import { MatToolbarModule } from '@angular/material/toolbar';
-import { MatDialogModule } from '@angular/material/dialog';
 
 import { SomaComponent } from './soma.component';
-import { AppModule } from 'src/app/app.module';
 
-fdescribe('SomaComponent', () => {
+describe('SomaComponent', () => {
   let component: SomaComponent;
   let fixture: ComponentFixture<SomaComponent>;
 
@@ -29,25 +18,13 @@ fdescribe('SomaComponent', () => {
     await TestBed.configureTestingModule({
       declarations: [SomaComponent],
       imports: [
-        AppModule,
-        BrowserModule,
         FormsModule,
-        // AppRoutingModule,
         BrowserAnimationsModule,
-        HttpClientModule,
         MatInputModule,
         MatFormFieldModule,
         MatButtonModule,
         MatButtonToggleModule,
         MatSlideToggleModule,
-        MatCardModule,
-        MatGridListModule,
-        MatToolbarModule,
-        MatIconModule,
-        MatMenuModule,
-        MatDialogModule,
-        ReactiveFormsModule,
-        RecaptchaModule,
       ],
     }).compileComponents();
   });
@@ -88,8 +65,7 @@ fdescribe('SomaComponent', () => {
     });
   });
 
-  xdescribe('#limpar', () => {
-
+  describe('#limpar', () => {
     it('Limpa os campos de entrada e reinicia...', () => {
       // Given
       component.nro1 = undefined;
@@ -103,7 +79,5 @@ fdescribe('SomaComponent', () => {
       expect(component.nro1).toEqual(undefined);
       expect(component.nro2).toEqual(undefined);
     });
-
   });
-  
 });
