@@ -12,6 +12,7 @@ export class LoginService implements OnInit {
 
   constructor(private http: HttpClient, private router: Router) {}
 
+  // eslint-disable-next-line @angular-eslint/contextual-lifecycle
   ngOnInit(): void {
     this.menuBar = false;
     if (this.getStatusLogin() != 'Logado') {
