@@ -4,6 +4,8 @@ import { ToolbarComponent } from './toolbar.component';
 import { AppComponent } from 'src/app/app.component';
 import { RouterTestingModule } from '@angular/router/testing';
 import { MatToolbarModule } from '@angular/material/toolbar';
+import { HttpClient } from '@angular/common/http';
+import { HttpClientTestingModule } from '@angular/common/http/testing';
 
 describe('ToolbarComponent', () => {
   let component: ToolbarComponent;
@@ -11,8 +13,8 @@ describe('ToolbarComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [ RouterTestingModule, MatToolbarModule ],
-      providers: [AppComponent],
+      imports: [RouterTestingModule, HttpClientTestingModule, MatToolbarModule],
+      providers: [AppComponent, HttpClient],
       declarations: [ToolbarComponent],
     }).compileComponents();
   });

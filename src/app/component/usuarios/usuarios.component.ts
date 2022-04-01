@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+
+import { AppComponent } from 'src/app/app.component';
+import { LoginService } from '../login/login.service';
 import { UserService } from './user.service';
 
 @Component({
@@ -13,14 +16,21 @@ export class UsuariosComponent implements OnInit {
 
   users: any[] | undefined;
 
-  constructor(private userService: UserService) { }
+  constructor(
+    private userService: UserService,
+    private loginService: LoginService,
+    private appComponent: AppComponent
+  ) {}
 
-  ngOnInit(): void { this.carregaUsuarios(1); }
+  ngOnInit(): void {
+    this.loginService.ngOnInit();
+    this.appComponent.ngOnInit();
+    this.carregaUsuarios(1);
+  }
 
   carregaUsuarios(nroDaPagina: number): void {
     this.userService.fetchUsers(nroDaPagina).subscribe((respostaLogin) => {
       this.users = respostaLogin.data;
     });
   }
-
 }

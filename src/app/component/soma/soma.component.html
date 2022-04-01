@@ -1,7 +1,7 @@
 <!-- <app-toolbar></app-toolbar> -->
 <div class="container">
   <div class="tema">
-    <h2 class="example-h2" [class.mudaTemaTitulo]="ligado == 'Claro'">Tema:</h2>
+    <h2 class="example-h2" [class.mudaTemaTitulo]="ligado === 'Claro'">Tema:</h2>
     <section class="example-section">
       <mat-slide-toggle
         class="example-margin"
@@ -9,7 +9,7 @@
         [checked]="checked"
         [disabled]="disabled"
         (change)="tema()"
-        [class.mudaTema]="ligado == 'Escuro'"
+        [class.mudaTema]="ligado === 'Escuro'"
       >
         {{ ligado }}.
       </mat-slide-toggle>
@@ -19,7 +19,7 @@
   <div class="entrada">
     <mat-form-field class="example-full-width" appearance="outline">
       <mat-label>Primeiro Número</mat-label>
-      <input [class.mudaTemaEntradaNro]="ligado == 'Escuro'"
+      <input [class.mudaTemaEntradaNro]="ligado === 'Escuro'"
         classe="entradaNro"
         matInput 
         [(ngModel)]="nro1"
@@ -30,7 +30,7 @@
 
     <mat-form-field class="example-full-width" appearance="outline">
       <mat-label>Segundo Número</mat-label>
-      <input [class.mudaTemaEntradaNro]="ligado == 'Escuro'"
+      <input [class.mudaTemaEntradaNro]="ligado === 'Escuro'"
       classe="entradaNro"
         matInput
         [(ngModel)]="nro2"
@@ -45,7 +45,7 @@
       color="primary"
       mat-raised-button
       (click)="somar()"
-      [class.mudaTemaBotaoSomar]="ligado == 'Claro'"
+      [class.mudaTemaBotaoSomar]="ligado === 'Claro'"
     >
       Somar
     </button>
@@ -53,19 +53,19 @@
       mat-button
       mat-raised-button
       (click)="limpar()"
-      [class.mudaTemaBotaoLimpar]="ligado == 'Claro'"
+      [class.mudaTemaBotaoLimpar]="ligado === 'Claro'"
     >
       Limpar
     </button>
   </div>
 
-  <div class="resultado" [class.mudaTemaResultado]="ligado == 'Claro'">
+  <div class="resultado" [class.mudaTemaResultado]="ligado === 'Claro'">
     <input
       class="ResultadoInput"
       matInput
       disabled
       [value]="resultado"
-      [class.mudaTemaResultadoInput]="ligado == 'Claro'"
+      [class.mudaTemaResultadoInput]="ligado === 'Claro'"
     />
   </div>
 </div>

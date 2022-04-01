@@ -1,16 +1,15 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 
 import { FormControl, Validators } from '@angular/forms';
 import { LoginService } from './login.service';
 import { Router } from '@angular/router';
-import { AppComponent } from './../../app.component';
 
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
   styleUrls: ['./login.component.scss'],
 })
-export class LoginComponent implements OnInit {
+export class LoginComponent {
   siteKey: string = '6LfWp9AeAAAAAEEmzdE7HE6UNYnPqq11ApIHh99c';
   captcha: string | undefined = undefined;
   emailFormControl = new FormControl('', [
@@ -23,15 +22,9 @@ export class LoginComponent implements OnInit {
   textoBotao: string = 'Entrar';
   statusBotao: string = 'true';
 
-  constructor(
-    private loginService: LoginService,
-    private router: Router,
-    private appComponent: AppComponent
-  ) {
+  constructor(private loginService: LoginService, private router: Router) {
     this.captcha = undefined;
   }
-
-  ngOnInit(): void {}
 
   resolved(captchaResponse: string) {
     this.statusBotao = 'true';
@@ -44,27 +37,28 @@ export class LoginComponent implements OnInit {
   enviar(): void {
     if (this.captcha == undefined || this.captcha == '') {
       this.captcha = '';
-    } else {
-      this.statusLogin = '';
-      this.textoBotao = 'Conectando...';
+      return;
+    } // else {
+    this.statusLogin = '';
+    this.textoBotao = 'Conectando...';
 
-      this.loginService
-        .login(this.emailFormControl.value, this.passwordFormControl.value)
-        .subscribe({
-          next: (respostaLogin) => {
-            if (respostaLogin.token == 'QpwL5tke4Pnpja7X4') {
-              this.statusLogin = 'Logado';
-              this.appComponent.setStatusLogin(this.statusLogin);
-              this.router.navigate(['/home']);
-            }
-          },
-          error: (err) => {
-            this.statusLogin = 'Erro';
-            this.textoBotao = 'Entrar';
-            this.router.navigate(['/login']);
-          },
-        });
-    }
+    this.loginService
+      .login(this.emailFormControl.value, this.passwordFormControl.value)
+      .subscribe({
+        next: (respostaLogin) => {
+          // if (respostaLogin.token == 'QpwL5tke4Pnpja7X4') {
+          this.statusLogin = 'Logado';
+          this.loginService.setStatusLogin(this.statusLogin);
+          this.router.navigate(['/home']);
+          // }
+        },
+        error: (err) => {
+          this.statusLogin = 'Erro';
+          this.textoBotao = 'Entrar';
+          this.router.navigate(['/login']);
+        },
+      });
+    // }
   }
 
   autenticado(): string {

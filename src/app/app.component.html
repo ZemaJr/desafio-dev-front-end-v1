@@ -1,6 +1,5 @@
-<!-- Toolbar -->
 <div class="toolbar" role="banner">
-  <a routerLink='/home'>
+  <a routerLink="/home">
     <img
       alt="Wiz Logo"
       src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR86mS8FMzoSHbbxdlh31JsjcBEZvhwfqXsx5QOMITqc4GHQP6N6v3nVcvMqfbI5115FZg&usqp=CAU"
@@ -51,35 +50,9 @@
     </svg>
   </a>
 </div>
-<mat-error class="menuBar" *ngIf="menuBar == true">
+
+<mat-error class="menuBar" *ngIf="menuBar === true">
   <app-toolbar></app-toolbar>
 </mat-error>
 
-<!--
-<div class="menu">
-  <a mat-raised-button routerLink="/login">
-    <i class="fi fi-br-portrait"></i> Login
-  </a>
-  <a mat-raised-button routerLink="/home">
-    <i class="fi fi-bs-home"></i> Home
-  </a>
-  <a mat-raised-button routerLink="/soma">
-    <i class="fi fi-sr-apps-add"></i> Adição
-  </a>
-  <a mat-raised-button routerLink="/usuarios">
-    <i class="fi fi-bs-id-badge"></i> Usuários
-  </a>
-  <a mat-raised-button routerLink="">
-    <i class="fi fi-bs-sign-out-alt"></i> Sair
-  </a>
-</div>
--->
-
-<!--
-<app-login></app-login>
-<app-home></app-home>
-<app-soma></app-soma>
-<app-usuarios></app-usuarios>
-<router-outlet></router-outlet>
--->
 <router-outlet></router-outlet>

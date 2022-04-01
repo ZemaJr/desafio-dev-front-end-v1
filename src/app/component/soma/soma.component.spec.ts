@@ -7,8 +7,11 @@ import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatButtonModule } from '@angular/material/button';
 import { MatButtonToggleModule } from '@angular/material/button-toggle';
 import { MatSlideToggleModule } from '@angular/material/slide-toggle';
-
 import { SomaComponent } from './soma.component';
+import { HttpClient } from '@angular/common/http';
+import { HttpClientTestingModule } from '@angular/common/http/testing';
+import { RouterTestingModule } from '@angular/router/testing';
+import { AppComponent } from 'src/app/app.component';
 
 describe('SomaComponent', () => {
   let component: SomaComponent;
@@ -16,6 +19,7 @@ describe('SomaComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
+      providers: [HttpClient, AppComponent],
       declarations: [SomaComponent],
       imports: [
         FormsModule,
@@ -25,6 +29,8 @@ describe('SomaComponent', () => {
         MatButtonModule,
         MatButtonToggleModule,
         MatSlideToggleModule,
+        HttpClientTestingModule,
+        RouterTestingModule
       ],
     }).compileComponents();
   });

@@ -1,43 +1,47 @@
-import { Injectable } from '@angular/core';
+import { Injectable, OnInit } from '@angular/core';
+
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
+import { Router } from '@angular/router';
 
 @Injectable({
   providedIn: 'root',
 })
-export class LoginService {
-  
-  constructor(private http: HttpClient) { }
+export class LoginService implements OnInit {
+  menuBar: boolean = false;
 
-  // isLoggedIn: boolean = false;
-  // url: string = 'https://reqres.in/api/login';
-  
+  constructor(private http: HttpClient, private router: Router) {}
+
+  ngOnInit(): void {
+    this.menuBar = false;
+    if (this.getStatusLogin() != 'Logado') {
+      this.router.navigate(['/login']);
+    }
+    this.menuBar = this.statusToolbar();
+  }
+
   login(email: string, password: string): Observable<any> {
     const url = 'https://reqres.in/api/login';
-    // this.http
-    //   .post(this.url, {
-    //     email: email,
-    //     password: password,
-    //   })
-    //   .subscribe((respostaLogin) =>
-    //     console.log('respostaLogin', respostaLogin)
-    //   );
+
     return this.http.post(url, {
       email: email,
       password: password,
     });
-    
   }
 
-  // login(email: string, password: string): Observable<LoginReponse> {
-  //   return this.http.post<LoginReponse>(this.url, {
-  //     email,
-  //     password,
-  //   });
-  // }
-  
-}
+  setStatusLogin(statusLogin: string): void {
+    localStorage.setItem('Status-Login', statusLogin);
+    this.statusToolbar();
+  }
 
-// interface LoginReponse {
-//   token: string;
-// }
+  getStatusLogin(): string | null {
+    return localStorage.getItem('Status-Login');
+  }
+
+  statusToolbar(): boolean {
+    if (this.getStatusLogin() == 'Logado') {
+      this.menuBar = true;
+    }
+    return this.menuBar;
+  }
+}

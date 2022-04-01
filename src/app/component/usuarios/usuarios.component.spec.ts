@@ -1,8 +1,10 @@
-import { HttpClient, HttpHandler } from '@angular/common/http';
+import { UsuariosComponent } from './usuarios.component';
+import { HttpClient } from '@angular/common/http';
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 import { MatGridListModule } from '@angular/material/grid-list';
-
-import { UsuariosComponent } from './usuarios.component';
+import { RouterTestingModule } from '@angular/router/testing';
+import { HttpClientTestingModule } from '@angular/common/http/testing';
+import { AppComponent } from 'src/app/app.component';
 
 describe('UsuariosComponent', () => {
   let component: UsuariosComponent;
@@ -10,9 +12,13 @@ describe('UsuariosComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      providers: [HttpClient, HttpHandler],
+      providers: [HttpClient, AppComponent],
       declarations: [UsuariosComponent],
-      imports: [MatGridListModule],
+      imports: [
+        MatGridListModule,
+        RouterTestingModule,
+        HttpClientTestingModule,
+      ],
     }).compileComponents();
   });
 

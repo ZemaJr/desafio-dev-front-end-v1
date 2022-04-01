@@ -1,12 +1,15 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
+
 import { ThemePalette } from '@angular/material/core';
+import { AppComponent } from 'src/app/app.component';
+import { LoginService } from '../login/login.service';
 
 @Component({
   selector: 'app-soma',
   templateUrl: './soma.component.html',
   styleUrls: ['./soma.component.scss'],
 })
-  export class SomaComponent {
+  export class SomaComponent implements OnInit {
   nro1: number | undefined;
   nro2: number | undefined;
   resultado: string = 'Resultado:';
@@ -15,6 +18,16 @@ import { ThemePalette } from '@angular/material/core';
   disabled = false;
   ligado: string = 'Claro';
   erro: boolean = false;
+
+  constructor(
+    private loginService: LoginService,
+    private appComponent: AppComponent
+  ) { }
+  
+  ngOnInit(): void {
+    this.loginService.ngOnInit();
+    this.appComponent.ngOnInit();
+  }
 
   tema() {
     this.ligado = this.ligado == 'Claro' ? 'Escuro' : 'Claro';

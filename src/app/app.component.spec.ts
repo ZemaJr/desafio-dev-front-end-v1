@@ -1,3 +1,4 @@
+import { HttpClientTestingModule } from '@angular/common/http/testing';
 import { TestBed } from '@angular/core/testing';
 import { MatGridListModule } from '@angular/material/grid-list';
 import { RouterTestingModule } from '@angular/router/testing';
@@ -6,7 +7,11 @@ import { AppComponent } from './app.component';
 describe('AppComponent', () => {
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [RouterTestingModule, MatGridListModule],
+      imports: [
+        RouterTestingModule,
+        HttpClientTestingModule,
+        MatGridListModule,
+      ],
       declarations: [AppComponent],
     }).compileComponents();
   });

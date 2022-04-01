@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+
+import { LoginService } from './../login/login.service';
 import { AppComponent } from 'src/app/app.component';
 
 @Component({
@@ -7,9 +9,13 @@ import { AppComponent } from 'src/app/app.component';
   styleUrls: ['./home.component.scss'],
 })
 export class HomeComponent implements OnInit {
-  constructor(private appComponent: AppComponent) { }
+  constructor(
+    private loginService: LoginService,
+    private appComponent: AppComponent
+  ) {}
 
-  ngOnInit(): void { 
+  ngOnInit(): void {
+    this.loginService.ngOnInit();
     this.appComponent.ngOnInit();
   }
 }

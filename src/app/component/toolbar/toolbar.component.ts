@@ -1,21 +1,22 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 
+import { LoginService } from '../login/login.service';
 import { AppComponent } from 'src/app/app.component';
 
 @Component({
   selector: 'app-toolbar',
   templateUrl: './toolbar.component.html',
-  styleUrls: ['./toolbar.component.scss']
+  styleUrls: ['./toolbar.component.scss'],
 })
-export class ToolbarComponent implements OnInit {
+export class ToolbarComponent {
+  constructor(
+    private loginService: LoginService,
+    private appComponent: AppComponent
+  ) {}
 
-  constructor(private appComponent: AppComponent) { }
-  
-  ngOnInit(): void { }
-  
   removeStatusLogin(): void {
     localStorage.removeItem('Status-Login');
-    this.appComponent.menuBar = false;
+    this.loginService.menuBar = false;
+    this.appComponent.ngOnInit();
   }
-
 }

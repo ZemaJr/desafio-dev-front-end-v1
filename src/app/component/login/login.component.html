@@ -68,13 +68,13 @@
       {{ textoBotao }}
     </button>
 
-    <mat-error *ngIf="captcha == ''">
+    <mat-error *ngIf="captcha === ''">
       <p classe="alerta">🚫 <strong>reCaptcha</strong> é obrigatório!</p>
     </mat-error>
-    <mat-error *ngIf="statusLogin == 'Logado'">
+    <mat-error *ngIf="statusLogin === 'Logado'">
       <p classe="alerta">✅ <strong>Login</strong> efetuado com sucesso!</p>
     </mat-error>
-    <mat-error *ngIf="statusLogin == 'Erro'">
+    <mat-error *ngIf="statusLogin === 'Erro'">
       <p classe="alerta">🚫 <strong>Usuário ou Senha</strong> inválidos!</p>
     </mat-error>
   </div>

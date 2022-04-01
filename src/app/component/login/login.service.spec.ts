@@ -2,6 +2,7 @@ import { TestBed } from '@angular/core/testing';
 
 import { LoginService } from './login.service';
 import { HttpClient, HttpHandler } from '@angular/common/http';
+import { RouterTestingModule } from '@angular/router/testing';
 
 describe('LoginService', () => {
   let service: LoginService;
@@ -10,6 +11,7 @@ describe('LoginService', () => {
   beforeEach(() => {
     mockHttpClient = jasmine.createSpyObj('mockHttpClient', ['post']);
     TestBed.configureTestingModule({
+      imports: [RouterTestingModule],
       providers: [
         { provide: HttpClient, HttpHandler, useValue: mockHttpClient },
       ],
