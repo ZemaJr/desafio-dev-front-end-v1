@@ -1,12 +1,12 @@
 <mat-toolbar>
   <a mat-flat-button routerLink="/home"
     ><i class="fi fi-bs-home"></i>
-  Home
+    Home
   </a>
 
   <a mat-flat-button routerLink="/soma"
-  ><i class="fi fi-sr-apps-add"></i>
-  Adição
+    ><i class="fi fi-sr-apps-add"></i>
+    Adição
   </a>
 
   <a mat-flat-button routerLink="/usuarios"
@@ -14,8 +14,13 @@
     Usuários
   </a>
 
-  <a mat-flat-button routerLink="/login"
-    (click)="removeStatusLogin()"><i class="fi fi-bs-sign-out-alt"></i>
+  <a mat-flat-button routerLink="/users"
+    ><i class="fi fi-bs-id-badge"></i>
+    Users
+  </a>
+
+  <a mat-flat-button routerLink="/login" (click)="removeStatusLogin()"
+    ><i class="fi fi-bs-sign-out-alt"></i>
     Sair
   </a>
 </mat-toolbar>
