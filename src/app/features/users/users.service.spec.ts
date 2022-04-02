@@ -36,7 +36,9 @@ fdescribe('UsersService', () => {
       mockHttpClient.get.and.returnValue(of(fakeApiResponse));
 
       // When
-      service.loadUsers();
+      service.loadUsers().subscribe((users) => {
+        expect(users).toEqual(fakeApiResponse);
+      });
 
       // then
 
