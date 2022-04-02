@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { UsersService } from './users.service';
+import { ApiResponse, User, UsersService } from './users.service';
 
 @Component({
   selector: 'app-users',
@@ -10,8 +10,12 @@ export class UsersComponent implements OnInit {
 
   constructor(private usersService: UsersService) { }
 
+  users: User[] = [];
+
   ngOnInit(): void {
-    this.usersService.loadUsers();
+    this.usersService.loadUsers().subscribe((val: ApiResponse) => {
+      this.users = val.data;
+    });
   }
 
 
