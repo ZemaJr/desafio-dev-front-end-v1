@@ -10,7 +10,7 @@ export class UsersService {
   constructor(private http: HttpClient) { }
 
   loadUsers(): Observable<any> {
-    return this.http.get('https://reqres.in/api/users')
+    return this.http.get('https://reqres.in/api/users');
   }
 
 }

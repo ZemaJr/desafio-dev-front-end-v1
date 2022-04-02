@@ -1,14 +1,19 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { UsersComponent } from './users.component';
+import { UsersService } from './users.service';
 
-describe('UsersComponent', () => {
+fdescribe('UsersComponent', () => {
   let component: UsersComponent;
   let fixture: ComponentFixture<UsersComponent>;
+  let mockUserService: jasmine.SpyObj<UsersService>;
 
   beforeEach(async () => {
+    mockUserService = jasmine.createSpyObj('mockUserService', ['loadUsers']);
+
     await TestBed.configureTestingModule({
-      declarations: [ UsersComponent ]
+      declarations: [ UsersComponent ],
+      providers: [{ provide: UsersService, useValue: mockUserService }],
     })
     .compileComponents();
   });
@@ -22,4 +27,16 @@ describe('UsersComponent', () => {
   it('should create', () => {
     expect(component).toBeTruthy();
   });
+
+  describe('#ngOnInit', () => {
+    it('should load users from user service', () => {
+      // When
+      component.ngOnInit();
+
+      // Then
+      expect(mockUserService.loadUsers).toHaveBeenCalled();
+    });
+
+  });
+
 });

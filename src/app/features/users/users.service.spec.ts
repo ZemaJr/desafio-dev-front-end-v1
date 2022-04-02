@@ -37,11 +37,9 @@ fdescribe('UsersService', () => {
 
       // When
       service.loadUsers().subscribe((users) => {
+        // then
         expect(users).toEqual(fakeApiResponse);
       });
-
-      // then
-
     });
 
   });
