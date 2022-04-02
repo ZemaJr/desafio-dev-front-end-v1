@@ -112,7 +112,7 @@ describe('LoginComponent', () => {
         });
       });
 
-      fdescribe('given login fails', () => {
+      describe('given login fails', () => {
         beforeEach(() => {
           // Given
           component.captcha = 'checked';
