@@ -37,6 +37,14 @@ fdescribe('UsersComponent', () => {
       expect(mockUserService.loadUsers).toHaveBeenCalled();
     });
 
+    it('should update component users with users from service', () => {
+      // Given
+
+      // When
+
+      // Then
+    });
+
   });
 
 });
