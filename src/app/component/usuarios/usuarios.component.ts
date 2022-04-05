@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 
 import { AppComponent } from 'src/app/app.component';
 import { LoginService } from '../login/login.service';
-import { UserService } from './user.service';
+import { User, UserService } from './user.service';
 
 @Component({
   selector: 'app-usuarios',
@@ -14,7 +14,8 @@ export class UsuariosComponent implements OnInit {
   from Japan. A small, agile dog that copes very well with mountainous terrain, the Shiba Inu was
   originally bred for hunting.`;
 
-  users: any[] | undefined;
+  // users: any[] | undefined;
+  users: User[] = [];
 
   constructor(
     private userService: UserService,

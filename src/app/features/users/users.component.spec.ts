@@ -4,7 +4,7 @@ import { UsersComponent } from './users.component';
 import { fakeApiResponse, UsersService } from './users.service';
 import { of } from 'rxjs';
 
-fdescribe('UsersComponent', () => {
+describe('UsersComponent', () => {
   let component: UsersComponent;
   let fixture: ComponentFixture<UsersComponent>;
   let mockUsersService: jasmine.SpyObj<UsersService>;

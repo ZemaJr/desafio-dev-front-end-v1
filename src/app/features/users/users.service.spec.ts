@@ -4,7 +4,7 @@ import { fakeApiResponse, UsersService } from './users.service';
 import { HttpClient } from '@angular/common/http';
 import { of } from 'rxjs';
 
-fdescribe('UsersService', () => {
+describe('UsersService', () => {
   let service: UsersService;
   let mockHttpClient: jasmine.SpyObj<HttpClient>;
 
