@@ -17,7 +17,6 @@ const routes: Routes = [
   { path: 'home', component: HomeComponent },
   { path: 'soma', component: SomaComponent },
   { path: 'usuarios', component: UsuariosComponent },
-  { path: 'users', loadChildren: () => import('./features/users/users.module').then(m => m.UsersModule) },
   // {path: 'home', component: HomeComponent, canActivate: [AuthGuard]},
   // {path: 'soma', component: SomaComponent, canActivate: [AuthGuard]},
   // {path: 'usuarios', component: UsuariosComponent, canActivate: [AuthGuard]},

@@ -1,7 +1,7 @@
 import { TestBed } from '@angular/core/testing';
 
 import { LoginService } from './login.service';
-import { HttpClient, HttpHandler } from '@angular/common/http';
+import { HttpClient } from '@angular/common/http';
 import { RouterTestingModule } from '@angular/router/testing';
 
 describe('LoginService', () => {
@@ -13,7 +13,7 @@ describe('LoginService', () => {
     TestBed.configureTestingModule({
       imports: [RouterTestingModule],
       providers: [
-        { provide: HttpClient, HttpHandler, useValue: mockHttpClient },
+        { provide: HttpClient, useValue: mockHttpClient },
       ],
     });
     service = TestBed.inject(LoginService);
